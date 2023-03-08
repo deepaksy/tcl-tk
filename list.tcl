@@ -21,3 +21,38 @@ append colors " " "cream"
 lappend colors "black"
 puts $colors
 
+# Length of a List
+set lenofColors [llength $colors]
+
+puts "Length of Colors list: $lenofColors"
+
+# Accessing a item in a list
+
+puts "Item at index 0: [lindex $colors 0]"
+
+
+# Insertion items in list
+
+set fruits [list mango orange]
+set fruits [linsert $fruits 3 guava]
+puts $fruits
+
+# Replace Items at Index
+
+set var {orange blue red green}
+set var [lreplace $var 2 4 black white]; # Syntax [lreplace $listname firstindex lastindex value1 value2 ....]
+puts $var
+
+# Set Item at a Index
+
+# Syntax : lset listname index value
+
+lset var 0 pink
+puts $var
+
+
+# Transform a list into Variables
+lassign $colors color1 color2 color3
+
+puts "$color1 $color2"
+
