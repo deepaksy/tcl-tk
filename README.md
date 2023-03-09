@@ -27,3 +27,26 @@ Tool Command Language( TCL ), is a general purpose programming language. **John 
 
 <!-- ## TCL - Special Variables -->
 
+
+## Namespaces 
+
+Namespaces is a container for set of identifiers that is used to group variables and procedures. Namespaces are avaiable from TCL version 8.0. 
+
+Namespace can be created using **namespace** command. A simple example for creating namespace is shown below-
+
+```tclsh
+#!/usr/bin/tclsh
+
+namespace eval Math {
+    variable result
+}
+
+proc Math::Add { a b } {
+    set ::Math::result [expr $a+$b]
+}
+
+Math::Add 10 20
+
+puts $::Math::result
+```
+
